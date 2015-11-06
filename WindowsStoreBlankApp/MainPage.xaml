@@ -46,7 +46,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="7" Style="{StaticResource LabelStyle}" Text="Last Name" />
                 
                 <TextBox x:Name="id" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
-                <ComboBox x:Name="title" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" >
+                <ComboBox x:Name="title" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" >
                     <ComboBoxItem Content="Mr" />
                     <ComboBoxItem Content="Mrs" />
                     <ComboBoxItem Content="Ms" />
@@ -90,7 +90,7 @@
                     <TextBox Grid.Row="0" Grid.Column="1" x:Name="cId" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
                     <TextBox Grid.Row="2" Grid.Column="1" x:Name="cFirstName" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" />
                     <TextBox Grid.Row="3" Grid.Column="1" x:Name="cLastName" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" />
-                    <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20">
+                    <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Height="39">
                         <ComboBoxItem Content="Mr" />
                         <ComboBoxItem Content="Mrs" />
                         <ComboBoxItem Content="Ms" />
