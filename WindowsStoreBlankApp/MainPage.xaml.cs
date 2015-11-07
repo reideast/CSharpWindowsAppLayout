@@ -26,6 +26,22 @@ namespace WindowsStoreBlankApp
         {
             this.InitializeComponent();
             Window.Current.SizeChanged += WindowSizeChanged;
+
+            List<string> titles = new List<string> { "Mr", "Mrs", "Miss", "Ms" };
+            this.title.ItemsSource = titles;
+            this.cTitle.ItemsSource = titles;
+
+            Customer customer = new Customer
+            {
+                CustomerID = 1,
+                Title = "Mr",
+                FirstName = "John",
+                LastName = "Sharp",
+                EmailAddress = "john@contoso.com",
+                Phone = "111-1111"
+            };
+
+            this.DataContext = customer;
         }
 
         void WindowSizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
