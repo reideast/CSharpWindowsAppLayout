@@ -31,17 +31,8 @@ namespace WindowsStoreBlankApp
             this.title.ItemsSource = titles;
             this.cTitle.ItemsSource = titles;
 
-            Customer customer = new Customer
-            {
-                CustomerID = 1,
-                Title = "Mr",
-                FirstName = "John",
-                LastName = "Sharp",
-                EmailAddress = "john@contoso.com",
-                Phone = "111-1111"
-            };
-
-            this.DataContext = customer;
+            ViewModel viewModel = new ViewModel();
+            this.DataContext = viewModel;
         }
 
         void WindowSizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)

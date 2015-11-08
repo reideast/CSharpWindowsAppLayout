@@ -45,16 +45,16 @@
                 <TextBlock Grid.Row="0" Grid.Column="5" Style="{StaticResource LabelStyle}" Text="First Name" />
                 <TextBlock Grid.Row="0" Grid.Column="7" Style="{StaticResource LabelStyle}" Text="Last Name" />
                 
-                <TextBox x:Name="id" Text="{Binding CustomerID, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
-                <ComboBox x:Name="title" SelectedValue="{Binding Title, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"></ComboBox>
-                <TextBox x:Name="firstname" Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
-                <TextBox x:Name="lastName" Text="{Binding LastName, Mode=TwoWay}" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                <TextBox x:Name="id" Text="{Binding Current.CustomerID, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
+                <ComboBox x:Name="title" SelectedValue="{Binding Current.Title, Mode=TwoWay}" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20"></ComboBox>
+                <TextBox x:Name="firstname" Text="{Binding Current.FirstName, Mode=TwoWay}" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                <TextBox x:Name="lastName" Text="{Binding Current.LastName, Mode=TwoWay}" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
 
                 <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource LabelStyle}" Text="Email" />
-                <TextBox x:Name="email" Text="{Binding EmailAddress, Mode=TwoWay}" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" VerticalAlignment="Center" FontSize="20" />
+                <TextBox x:Name="email" Text="{Binding Current.EmailAddress, Mode=TwoWay}" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" VerticalAlignment="Center" FontSize="20" />
 
                 <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource LabelStyle}" Text="Phone" />
-                <TextBox x:Name="phone" Text="{Binding Phone, Mode=TwoWay}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Width="200" VerticalAlignment="Center" FontSize="20" />
+                <TextBox x:Name="phone" Text="{Binding Current.Phone, Mode=TwoWay}" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextWrapping="Wrap" Width="200" VerticalAlignment="Center" FontSize="20" />
             </Grid>
         </Grid>
         
@@ -82,14 +82,14 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Title" />
                     <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="First Name" />
                     <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Last Name" />
-                    <TextBox Grid.Row="0" Text="{Binding CustomerID, Mode=TwoWay}" Grid.Column="1" x:Name="cId" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
-                    <TextBox Grid.Row="2" Text="{Binding FirstName, Mode=TwoWay}" Grid.Column="1" x:Name="cFirstName" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
-                    <TextBox Grid.Row="3" Text="{Binding LastName, Mode=TwoWay}" Grid.Column="1" x:Name="cLastName" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
-                    <ComboBox Grid.Row="1" SelectedValue="{Binding Title, Mode=TwoWay}" Grid.Column="1" x:Name="cTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Height="39"></ComboBox>
+                    <TextBox Grid.Row="0" Text="{Binding Current.CustomerID, Mode=TwoWay}" Grid.Column="1" x:Name="cId" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" IsReadOnly="True" />
+                    <TextBox Grid.Row="2" Text="{Binding Current.FirstName, Mode=TwoWay}" Grid.Column="1" x:Name="cFirstName" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                    <TextBox Grid.Row="3" Text="{Binding Current.LastName, Mode=TwoWay}" Grid.Column="1" x:Name="cLastName" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                    <ComboBox Grid.Row="1" SelectedValue="{Binding Current.Title, Mode=TwoWay}" Grid.Column="1" x:Name="cTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="20" Height="39"></ComboBox>
                     <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Email" />
-                    <TextBox Grid.Row="4" Text="{Binding EmailAddress, Mode=TwoWay}" Grid.Column="1" x:Name="cEmail" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                    <TextBox Grid.Row="4" Text="{Binding Current.EmailAddress, Mode=TwoWay}" Grid.Column="1" x:Name="cEmail" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
                     <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Phone" />
-                    <TextBox Grid.Row="5" Text="{Binding Phone, Mode=TwoWay}" Grid.Column="1" x:Name="cPhone" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
+                    <TextBox Grid.Row="5" Text="{Binding Current.Phone, Mode=TwoWay}" Grid.Column="1" x:Name="cPhone" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" />
                 </Grid>
             </Grid>
         </Grid>
@@ -109,4 +109,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
+    <Page.TopAppBar>
+        <AppBar IsSticky="True">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <AppBarButton x:Name="previousCustomer" Icon="Back" Command="{Binding Path=PreviousCustomer}" />
+                <AppBarButton x:Name="nextCustomer" Icon="Forward" Command="{Binding Path=NextCustomer}" />
+            </StackPanel>
+        </AppBar>
+    </Page.TopAppBar>
 </Page>
