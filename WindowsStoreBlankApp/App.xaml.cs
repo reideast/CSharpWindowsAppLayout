@@ -24,6 +24,13 @@ namespace WindowsStoreBlankApp
     /// </summary>
     sealed partial class App : Application
     {
+        private ViewModel _mainViewModel = null;
+        public ViewModel MainViewModel
+        {
+            get { return this._mainViewModel; }
+            set { this._mainViewModel = value;  }
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -104,6 +111,17 @@ namespace WindowsStoreBlankApp
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        protected override void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args)
+        {
+            var previousContent = Window.Current.Content;
+            var frame = previousContent as Frame;
+
+            frame.Navigate(typeof(SearchResultsPage), args.QueryText);
+            Window.Current.Content = frame;
+            
+            Window.Current.Activate();
         }
     }
 }

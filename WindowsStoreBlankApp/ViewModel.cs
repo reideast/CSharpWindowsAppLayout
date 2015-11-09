@@ -10,6 +10,11 @@ namespace WindowsStoreBlankApp
     public class ViewModel : INotifyPropertyChanged
     {
         private List<Customer> customers;
+        public List<Customer> AllCustomers
+        {
+            get { return this.customers; }
+        }
+
         private int currentCustomer;
 
         public Command NextCustomer { get; private set; }
@@ -45,41 +50,20 @@ namespace WindowsStoreBlankApp
             this.NextCustomer = new Command(this.Next, () => { return this.customers.Count > 0 && !this.IsAtEnd; });
             this.PreviousCustomer = new Command(this.Previous, () => { return this.customers.Count > 0 && !this.IsAtStart; });
 
-            this.customers = new List<Customer>
-            {
-                new Customer
-                {
-                    CustomerID = 1,
-                    Title = "Mr",
-                    FirstName="John",
-                    LastName="Sharp",
-                    EmailAddress="john@contoso.com",
-                    Phone="111-1111"
-                },
-                new Customer
-                {
-                    CustomerID = 2,
-                    Title = "Mrs",
-                    FirstName="Diana",
-                    LastName="Sharp",
-                    EmailAddress="diana@contoso.com",
-                    Phone="111-1112"
-                },
-                new Customer
-                {
-                    CustomerID = 3,
-                    Title = "Ms",
-                    FirstName="Francesca",
-                    LastName="Sharp",
-                    EmailAddress="frankie@contoso.com",
-                    Phone="111-1113"
-                }
-            };
+            this.customers = DataSource.Customers;
         }
 
         public Customer Current 
         {
             get { return this.customers[currentCustomer]; } 
+        }
+
+        public void GoTo(Customer customer)
+        {
+            this.currentCustomer = this.customers.IndexOf(customer);
+            this.OnPropertyChanged("Current");
+            this.IsAtStart = (this.currentCustomer == 0);
+            this.IsAtEnd = (this.customers.Count - 1 == this.currentCustomer);
         }
 
         private void Next()

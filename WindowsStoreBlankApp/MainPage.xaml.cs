@@ -32,15 +32,28 @@ namespace WindowsStoreBlankApp
             this.cTitle.ItemsSource = titles;
 
             ViewModel viewModel = new ViewModel();
+            (Application.Current as App).MainViewModel = viewModel;
             this.DataContext = viewModel;
         }
 
         void WindowSizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-            if (e.Size.Width <= 750)
+            if (e != null && e.Size.Width <= 750)
                 VisualStateManager.GoToState(this, "ColumnarLayout", false);
             else
                 VisualStateManager.GoToState(this, "TabularLayout", false);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Customer selectedCustomer = e.Parameter as Customer;
+            if (selectedCustomer != null) //NOTE: I think in the new version of c#, the ?? operator works here? something to check out in the future.
+            {
+                ViewModel viewModel = (Application.Current as App).MainViewModel;
+                viewModel.GoTo(selectedCustomer);
+            }
+            this.WindowSizeChanged(this, null);
         }
     }
 }
