@@ -75,6 +75,9 @@ namespace WindowsStoreBlankApp
             }
         }
 
+        public System.Guid rowguid { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

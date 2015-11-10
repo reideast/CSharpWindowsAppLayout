@@ -32,6 +32,7 @@ namespace WindowsStoreBlankApp
             this.cTitle.ItemsSource = titles;
 
             ViewModel viewModel = new ViewModel();
+            viewModel.GetDataAsync();
             (Application.Current as App).MainViewModel = viewModel;
             this.DataContext = viewModel;
         }

@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!--<Grid Style="{StaticResource GridStyle}">-->
+        <ProgressRing HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="AntiqueWhite" Height="100" Width="100" IsActive="{Binding IsBusy}" Canvas.ZIndex="1" />
         <Grid x:Name="customersTabularView" Margin="40,54,0,0" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
